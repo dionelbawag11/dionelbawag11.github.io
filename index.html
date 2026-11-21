@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c0912" />
+  <meta name="description" content="Dionel Victor Calderon Bawag — software developer, e-learning developer, and AI automation developer." />
+  <title>Dionel Victor Calderon Bawag — Terminal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{color-scheme:dark;--bg:#0c0912;--fg:#e9e1f3;--muted:#a297b4;--orange:#c6a8ff;--green:#b99aff;--cyan:#d2bcff;--pink:#ed9ada;--yellow:#e0c5ff;--mono:'Fira Code','Cascadia Code',Consolas,monospace}
+    *{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font:14px/1.58 var(--mono);-webkit-font-smoothing:antialiased}.screen{width:min(100%,1240px);padding:24px 20px 40px;margin:0 auto}.terminal{min-height:calc(100vh - 64px)}.command-line{display:flex;align-items:baseline;gap:0;min-height:23px;white-space:pre-wrap;overflow-wrap:anywhere}.visitor{color:var(--orange)}.host{color:var(--green)}.path{color:var(--fg)}.typed-command{color:var(--fg)}.welcome-row{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;align-items:start;margin:15px 0 26px}.ascii-name,.ascii-art{font:inherit;white-space:pre;overflow:hidden;color:var(--fg);line-height:1.16;margin:0}.ascii-name{font-size:clamp(5px,1vw,12px);letter-spacing:0;color:var(--green);line-height:1.35}.ascii-art{font-size:clamp(8px,1vw,13px);line-height:1.12}.terminal-copy{max-width:740px}.terminal-copy p{margin:0 0 11px}.rule{color:#a4b0bd;margin:13px 0}.intro-note{color:var(--muted)}.prompt-entry{display:flex;align-items:baseline;gap:0;margin-top:2px}.prompt-entry input{flex:1;min-width:40px;border:0;outline:0;background:transparent;color:var(--fg);caret-color:var(--fg);padding:0;font:inherit;line-height:inherit}.prompt-entry input::placeholder{color:transparent}.output{margin:0 0 3px;white-space:pre-wrap;overflow-wrap:anywhere}.output-block{margin:0 0 12px}.accent{color:var(--green)}.orange{color:var(--orange)}.cyan{color:var(--cyan)}.pink{color:var(--pink)}.yellow{color:var(--yellow)}.muted{color:var(--muted)}.section-title{color:var(--orange);margin:11px 0 2px}.project-output{margin:6px 0 11px}.project-output .name{color:var(--cyan)}a{color:var(--orange);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}a:hover{color:var(--yellow)}.cmd-trigger{appearance:none;border:0;background:transparent;padding:0;color:var(--green);font:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}.cmd-trigger:hover{color:var(--cyan)}.footer{margin-top:30px;color:var(--muted);font-size:11px}.history{max-height:calc(100vh - 200px);overflow:auto;scrollbar-width:thin;scrollbar-color:#544766 transparent}.history:empty{display:none}.terminal:focus-within .caret{display:none}.caret{display:inline-block;width:8px;height:16px;vertical-align:-3px;background:var(--fg);margin-left:3px;animation:blink 1s steps(2,start) infinite}@keyframes blink{to{visibility:hidden}}
+    @media(max-width:760px){.screen{padding:17px 15px 30px}.welcome-row{grid-template-columns:1fr;gap:24px;margin:12px 0 21px}.ascii-name{font-size:clamp(5px,1.3vw,9px)}.ascii-art{font-size:10px;max-height:220px}.terminal-copy{font-size:13px}.history{max-height:none}}@media(max-width:400px){.ascii-name{font-size:5px}.ascii-art{font-size:8px}.screen{padding-left:11px;padding-right:11px}}
+    @media(prefers-reduced-motion:reduce){.caret{animation:none}}
+  </style>
+  <style>
+    .welcome-row{grid-template-columns:1fr;gap:28px;align-items:center;justify-items:center}
+    .eye-motion{grid-column:1;width:max-content;max-width:100%;margin-inline:auto;overflow:hidden}
+    .ascii-art{display:block;width:max-content;max-width:100%;font-family:'Cascadia Mono',Consolas,monospace;font-size:clamp(12px,1.1vw,16px);line-height:1;white-space:normal;overflow:visible}
+    .eye-row{display:flex;height:1em;line-height:1;white-space:nowrap}
+    .eye-cell{position:relative;display:inline-block;flex:0 0 .52em;width:.52em;text-align:center;line-height:1}
+    .eye-overlay{position:absolute;inset:0;pointer-events:none}
+    @media(max-width:960px){.welcome-row{grid-template-columns:1fr;gap:24px}.eye-motion{grid-column:1}.ascii-art{font-size:clamp(12px,1.4vw,15px)}}
+    @media(max-width:400px){.ascii-art{font-size:11px}}
+  </style>
+</head>
+<body>
+  <main class="screen"><section class="terminal" aria-label="Interactive terminal portfolio">
+    <div class="welcome-row">
+      <div class="eye-motion" role="img" aria-label="Animated Braille eye">
+      <pre id="ascii-eye-source" hidden>⠀⠀⠀⠀⠀⠀⠀⠀⡠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⡾⠃⠘⠋⠉⠁⣠⣤⣶⣾⣿⣿⣿⣿⡄⠀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡔⠁⠀⠀⠀⠀⣠⡞⠁⠀⠀⠀⠀⠀⢀⡴⠃⠀⠀⠀⠀⠀⠀⠠⠤⠐⠲⠒⠒⠂⠈⠙⠒⠒⠒⠺⠆⠀⠘⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⠾⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠶⠛⠀⠁⠀⣀⣠⣤⠤⠶⠶⣶⣶⣦⣤⣤⣀⡀⠀⠀⠐⠠⠀⠀⠐⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⡀⠀⠀⠋⠀⠀⠀⠀⢀⠀⠀⠀⢁⡀⠀⢀⣀⣡⠄⠀⠀⣠⣶⠯⠽⠒⠛⠛⠛⠿⢿⣶⣯⣿⣻⢿⣿⡴⡄⢤⡀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀
+⡆⠁⠀⣴⡞⠀⠀⠀⢠⠃⠀⣠⣶⡟⠀⢠⠿⠋⢀⢄⡄⡾⠋⠁⠀⢀⣀⣀⣀⣀⠀⠀⠈⠻⣿⣿⣷⣝⢷⣽⣎⢿⡇⠀⢠⠀⠈⢧⡀⠀⠀⠀⠄
+⠁⣴⣼⡿⠀⠀⠀⢠⠃⢀⣼⣿⡿⠁⠀⠁⣠⢖⣵⣿⠙⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣦⡀⠀⠈⢿⣿⣿⣷⣝⢿⣮⠀⠀⣾⣷⡠⡈⠳⣄⠀⠐⠀
+⣾⣷⡿⠁⠀⠀⢠⠃⢠⣾⣿⠟⠁⢀⡤⢾⣷⣿⣿⣿⠀⠀⢸⣿⡎⠻⠿⡿⢿⡿⠛⣼⣿⡀⠀⠈⣿⣿⣿⣿⣷⡿⠀⢠⣿⣿⣿⣷⣦⣜⠆⠀⠀
+⣿⣧⠃⠀⠀⢀⡎⢠⡿⢟⡥⠂⠄⠎⣴⣿⣿⣿⣿⣟⠀⠀⣿⣿⣿⣗⡀⠀⠀⠀⣴⣿⣿⡇⠀⠀⣿⣿⣿⣿⣿⠁⠀⣼⣿⣿⣿⣿⣿⡟⠀⠀⢀
+⣿⡟⠘⠀⢀⠞⠁⣴⣞⣯⡞⡜⣸⢾⣿⣿⣿⣿⣿⣿⠀⠀⢻⣿⣿⣿⡿⣄⣼⣿⣿⣿⣿⠇⠀⠀⣿⣿⣿⣿⠇⣠⣰⣿⣿⣿⣿⣿⡟⠀⠀⠀⠄
+⣿⠁⡀⠀⢌⠆⣼⣿⣿⡿⣰⢣⣿⣁⠻⣿⣿⣿⣿⣿⣆⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⣰⣿⣿⡿⠃⣰⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠌⠀
+⡇⣸⡆⢀⡾⢰⣿⣿⡿⣱⣿⣼⣿⣿⣷⣌⠻⢿⣿⣿⣿⣷⣄⠀⠈⠛⠿⠿⠿⠟⠋⠀⠀⣠⣾⣿⣿⠟⢡⣾⣿⣿⣿⠿⡛⣻⠏⢀⠂⠀⠀⠀⠀
+⢠⣿⠁⣿⢇⣿⡿⡛⢁⣭⡁⣼⣿⣿⣿⣯⣽⡲⢭⣛⠿⣿⣿⣷⣦⣤⣤⣀⣀⣤⣤⣶⣾⡿⠟⠋⣀⣴⡾⢟⣻⣭⣷⡟⣵⠏⠠⠁⠀⠀⠀⠀⠀
+⣼⣿⡄⣿⣸⣯⣴⣤⣭⣛⠇⣿⣿⣿⣿⣿⣿⣿⣿⣶⣥⣂⠌⣉⠛⠛⠛⠛⠛⣛⣋⣩⠤⠶⢞⣛⣭⣵⣾⣿⣿⣿⡟⡼⠃⡰⠃⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣇⣿⣿⣻⣿⣿⣿⣷⣾⣽⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣮⣝⣓⣒⣒⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠘⢡⡞⠁⠀⠀⠀⡠⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠫⠂⡴⠋⡰⠁⠀⢀⡾⠁⠀⠀⠀</pre>
+      <div id="ascii-eye" class="ascii-art" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="terminal-copy">
+      <p><span class="accent">Dionel Victor Calderon Bawag</span></p>
+      <p>Software Developer · E-Learning Developer · AI &amp; Automation</p>
+      <p class="intro-note">Quezon City, Philippines · JavaScript, PHP, React, Moodle, Articulate Storyline 360, and Power Automate.</p>
+      <p>For a list of available commands, type or click <button type="button" class="cmd-trigger" data-command="help">help</button>.</p>
+    </div>
+    <div class="history" id="history" aria-live="polite"></div>
+    <form class="prompt-entry" id="command-form" autocomplete="off">
+      <label class="visitor" for="command-input">visitor</label><span class="muted">@</span><span class="host">dionel</span><span class="path">:~$ </span>
+      <span class="caret" aria-hidden="true"></span><input id="command-input" aria-label="Terminal command" spellcheck="false" autofocus />
+    </form>
+    <p class="footer">Tip: use <span class="accent">↑</span>/<span class="accent">↓</span> for command history and <span class="accent">Tab</span> to autocomplete.</p>
+  </section></main>
+  <script>
+    // Local port of the supplied Braille-eye artwork and its decode/blink/sigil loop.
+    const eyeSource=document.getElementById('ascii-eye-source'),eyeRoot=document.getElementById('ascii-eye');
+    if(eyeSource&&eyeRoot){
+      const sourceRows=eyeSource.textContent.split(/\r?\n/).filter(Boolean);
+      const eyeRows=sourceRows.map(line=>Array.from(line,ch=>{const mask=ch.codePointAt(0)-0x2800;return mask>=0&&mask<256?mask:0;}));
+      const eyeCols=Math.max(...eyeRows.map(row=>row.length));
+      eyeRows.forEach(row=>{while(row.length<eyeCols)row.push(0);});
+      const iris={r:7.7,c:27.5},eye={r:7.5,c:27.5,rr:5,rc:15},cellWidth=.52;
+      const cues={blink:1.8,geass:2.7,hold:4.5,exit:5.9},duration=6.9;
+      const styles=getComputedStyle(document.documentElement);
+      const palette={ink:styles.getPropertyValue('--fg').trim()||'#e9e1f3',dim:'#59476f',violet:styles.getPropertyValue('--orange').trim()||'#c6a8ff',pink:styles.getPropertyValue('--pink').trim()||'#ed9ada'};
+      const nodes=[];
+      eyeRoot.textContent='';
+      eyeRows.forEach((row,r)=>{
+        const rowNode=document.createElement('span');rowNode.className='eye-row';eyeRoot.appendChild(rowNode);
+        const rowCells=[];
+        row.forEach((_,c)=>{
+          const cell=document.createElement('span');cell.className='eye-cell';
+          const glyphNode=document.createElement('span'),overlayNode=document.createElement('span');
+          overlayNode.className='eye-overlay';cell.append(glyphNode,overlayNode);rowNode.appendChild(cell);
+          rowCells.push({cell,glyphNode,overlayNode});
+        });
+        nodes.push({rowNode,cells:rowCells});
+      });
+      const clamp=value=>Math.max(0,Math.min(1,value));
+      const easeOut=value=>1-Math.pow(1-clamp(value),3);
+      const hash=(a,b,c=0)=>{const x=Math.sin(a*127.1+b*311.7+c*74.7)*43758.5453;return x-Math.floor(x);};
+      const randomMask=(r,c,k)=>1+Math.floor(hash(r,c,k)*255);
+      const glyph=mask=>String.fromCharCode(0x2800+mask);
+      const mix=(a,b,t)=>{
+        const aa=a.match(/[\da-f]{2}/gi),bb=b.match(/[\da-f]{2}/gi);
+        if(!aa||!bb)return b;
+        return '#'+aa.map((part,i)=>Math.round(parseInt(part,16)*(1-t)+parseInt(bb[i],16)*t).toString(16).padStart(2,'0')).join('');
+      };
+      function drawEye(time){
+        const step=Math.floor(time*24),blinkU=clamp((time-cues.blink-.1)/.5),open=1-Math.sin(Math.PI*blinkU);
+        const tint=easeOut((time-cues.geass)/.4),sig=easeOut((time-cues.geass-.25)/.7)*6.2;
+        const wave=(time-cues.geass-.8)*20,pulse=time>=cues.hold?0.7+0.3*Math.sin((time-cues.hold)*Math.PI*2.4):1;
+        const exit=easeOut((time-cues.exit)/(duration-.15-cues.exit)),sigFade=1-easeOut((time-(duration-.4))/.35);
+        const glowAmount=(sig>0?Math.min(1,sig/3):0)*pulse*sigFade,pinkInk=mix(palette.ink,palette.pink,tint);
+        nodes.forEach(({rowNode,cells},r)=>{
+          const glitch=hash(r,step,3)<exit*.55?(hash(r,step,9)-.5)*8*exit:0;
+          rowNode.style.transform=`translateX(${glitch*cellWidth}em)`;
+          cells.forEach(({cell,glyphNode,overlayNode},c)=>{
+            const base=eyeRows[r][c],dx=c-iris.c,dy=r-iris.r,distance=Math.hypot(dx*cellWidth,dy);
+            const inTint=(dx/6.6)**2+(dy/3.2)**2<1,inSig=(dx/5)**2+(dy/2.3)**2<1;
+            let mask=base,color=palette.ink,glow=0,overlay=0,overlayOpacity=0;
+            if(time<cues.blink){
+              const front=(time-.1)*11-distance;
+              if(front<0){mask=hash(r,c,step)<.035?randomMask(r,c,step):0;color=palette.dim;}
+              else if(front<2.2){mask=randomMask(r,c,step);color=front<.8?palette.violet:palette.ink;glow=front<.8?.4:0;}
+            }
+            const eyeX=(c-eye.c)/eye.rc;
+            if(blinkU>0&&blinkU<1&&Math.abs(eyeX)<1){
+              const halfHeight=eye.rr*Math.sqrt(1-eyeX*eyeX),distanceY=Math.abs(r-eye.r),lid=distanceY-halfHeight*open;
+              if(distanceY<=halfHeight+.3&&lid>.3){mask=lid<1.3?0x36:0;color=palette.ink;}
+            }
+            if(inTint&&tint>0)color=pinkInk;
+            if(inSig&&sig>0&&Math.abs(dx)<=sig){
+              const inverse=(~base)&255,flick=Math.abs(dx)>sig-1.2&&hash(r,c,step)<.5;
+              if(inverse&&!flick){overlay=inverse;overlayOpacity=sigFade;glow=glowAmount;}
+            }
+            if(wave>0&&wave<20&&Math.abs(distance-wave)<1.1&&base){mask=randomMask(r,c,step+5);color=palette.violet;glow=.5;}
+            if(exit>0){
+              const threshold=exit*1.25-(inTint?0.35:0.1);
+              if(hash(r,c,7.3)<threshold)mask=0;
+              else if(hash(r,c,step)<exit){mask=randomMask(r,c,step+2);color=palette.dim;glow=0;}
+            }
+            glyphNode.textContent=glyph(mask);glyphNode.style.color=color;
+            overlayNode.textContent=overlay?glyph(overlay):'';overlayNode.style.opacity=overlayOpacity;
+            overlayNode.style.color=palette.violet;
+            overlayNode.style.textShadow=glow?`0 0 ${.4*glow+glowAmount*.35}em ${palette.violet}`:'none';
+            cell.style.textShadow=glow?`0 0 ${.4*glow}em ${palette.violet}`:'none';
+          });
+        });
+      }
+      const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(motionPreference.matches){
+        nodes.forEach(({cells},r)=>cells.forEach(({glyphNode},c)=>{glyphNode.textContent=glyph(eyeRows[r][c]);glyphNode.style.color=palette.ink;}));
+      }else{
+        const start=performance.now();let lastFrame=0;
+        const animate=now=>{if(now-lastFrame>=1000/24){drawEye(((now-start)/1000)%duration);lastFrame=now;}requestAnimationFrame(animate);};
+        drawEye(0);requestAnimationFrame(animate);
+      }
+    }
+    const historyEl=document.getElementById('history'),form=document.getElementById('command-form'),input=document.getElementById('command-input');
+    const commands=['help','about','projects','experience','skills','education','contact','clear'];const entries=[];let entryIndex=0;
+    function add(html,cls='output-block'){const el=document.createElement('div');el.className=cls;el.innerHTML=html;historyEl.appendChild(el);historyEl.scrollTop=historyEl.scrollHeight;}
+    function echo(value){const row=document.createElement('div');row.className='command-line';row.innerHTML=`<span class="visitor">visitor</span><span class="muted">@</span><span class="host">dionel</span><span class="path">:~$ </span><span class="typed-command"></span>`;row.querySelector('.typed-command').textContent=value;historyEl.appendChild(row);}
+    function esc(value){return value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function project(n,name,desc,tags){return `<div class="project-output"><span class="muted">0${n}.</span> <span class="name">${name}</span> — ${desc}<br><span class="muted">&nbsp;&nbsp;${tags}</span></div>`;}
+    const replies={
+      help:()=>`<div class="output">Available commands:</div><div class="output"><button type="button" class="cmd-trigger" data-command="about">about</button>       — professional summary</div><div class="output"><button type="button" class="cmd-trigger" data-command="projects">projects</button>    — automation and e-learning work</div><div class="output"><button type="button" class="cmd-trigger" data-command="experience">experience</button> — work history</div><div class="output"><button type="button" class="cmd-trigger" data-command="skills">skills</button>      — technical toolkit</div><div class="output"><button type="button" class="cmd-trigger" data-command="education">education</button>   — education</div><div class="output"><button type="button" class="cmd-trigger" data-command="contact">contact</button>     — get in touch</div><div class="output"><button type="button" class="cmd-trigger" data-command="clear">clear</button>       — clear the screen</div>`,
+      about:()=>`<div class="output">I'm <span class="accent">Dionel Victor Calderon Bawag</span>, a software developer in Quezon City, Philippines.</div><div class="output">I have 2+ years of experience in web application development, e-learning solutions, and AI-assisted software development. I build custom LMS plugins, interactive learning content, and workflow automation.</div>`,
+      projects:()=>`<div class="output">Selected work:</div><div class="project-output"><span class="name">Quotation &amp; SOW automation</span> <span class="muted">(Framedia)</span> — internal system that generates client-ready documents from project requirements.</div><div class="project-output"><span class="name">Personal ticketing automation</span> — browser-based event queue monitoring and notifications using JavaScript, Puppeteer, and Discord.</div><div class="project-output"><span class="muted">E-learning development</span> — interactive and scenario-based modules, reusable templates, and components built with Articulate Storyline 360.</div>`,
+      experience:()=>`<div class="output"><span class="orange">2025 — PRESENT</span> &nbsp; Software Developer · E-Learning Developer · AI Developer <span class="muted">@</span> Framedia</div><div class="output muted">Develop interactive learning experiences with Storyline 360 and AI-assisted workflows. Built reusable learning components and an internal quotation and SOW document automation system.</div><div class="output muted">Use AI coding tools and explore Power Automate to streamline development and repetitive processes.</div><br><div class="output"><span class="orange">2024 — 2025</span> &nbsp; Software Developer <span class="muted">@</span> Immersive Learning Management System (ILMS)</div><div class="output muted">Developed and maintained custom Moodle and aMember plugins using PHP, JavaScript, HTML, CSS, and MySQL. Troubleshot and optimized platform features and collaborated with clients on tailored solutions.</div>`,
+      skills:()=>`<div class="output"><span class="orange">Programming &amp; Web</span> &nbsp; JavaScript · PHP · HTML · CSS · React · MySQL · Git</div><div class="output"><span class="orange">AI &amp; Automation</span> &nbsp; Claude · Claude Code · Claude Design · ChatGPT · Kiro · Power Automate</div><div class="output"><span class="orange">E-Learning</span> &nbsp; Moodle · aMember · Articulate Storyline 360</div><div class="output"><span class="orange">Development</span> &nbsp; Full-stack · API/system integration · Plugin development · Deployment · Self-managed servers</div>`,
+      education:()=>`<div class="output"><span class="orange">2024</span> &nbsp; Information Technology <span class="muted">@</span> New Era University</div>`,
+      contact:()=>`<div class="output">Reach me by email or LinkedIn:</div><div class="output"><a href="mailto:bawagdionel@gmail.com">bawagdionel@gmail.com</a></div><div class="output"><a href="https://linkedin.com/in/dionelbawag/" target="_blank" rel="noreferrer">linkedin.com/in/dionelbawag/</a></div>`,
+    };
+    function executeCommand(value=input.value.trim()){const raw=value.trim();if(!raw)return;const cmd=raw.toLowerCase();echo(raw);entries.push(raw);entryIndex=entries.length;input.value='';if(cmd==='clear'){historyEl.innerHTML='';return;}if(cmd==='help'){const output=document.createElement('pre');output.className='output-block';output.style.cssText='display:block!important;color:var(--fg);white-space:pre-wrap;font:inherit;margin:0 0 12px';output.textContent='Available commands:\n  about       professional summary\n  projects    automation and e-learning work\n  experience  work history\n  skills      technical toolkit\n  education   education\n  contact     get in touch\n  clear       clear the screen';historyEl.appendChild(output);historyEl.scrollTop=historyEl.scrollHeight;return;}try{const response=Object.prototype.hasOwnProperty.call(replies,cmd)?replies[cmd]():`<div class="output">Command not found: <span class="orange">${esc(raw)}</span>. Type <span class="accent">help</span> to see available commands.</div>`;add(response);}catch(error){const failure=document.createElement('div');failure.className='output';failure.textContent=`Could not run “${raw}”: ${error.message}`;historyEl.appendChild(failure);}}
+    form.addEventListener('submit',e=>{e.preventDefault();executeCommand();});
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();executeCommand();return;}if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();entryIndex=Math.max(0,Math.min(entries.length,entryIndex+(e.key==='ArrowUp'?-1:1)));input.value=entries[entryIndex]||'';}if(e.key==='Tab'){e.preventDefault();const match=commands.find(c=>c.startsWith(input.value.toLowerCase()));if(match)input.value=match;}});
+    document.addEventListener('click',e=>{const trigger=e.target.closest('[data-command]');if(trigger){executeCommand(trigger.dataset.command);input.focus();return;}if(!e.target.closest('a,button'))input.focus();});
+    input.focus();
+  </script>
+</body>
+</html>
